@@ -1,16 +1,23 @@
 function fibonacci(num) {
-// your code here
-	let a = 0 , b = 1 , c;
-	
-	for(let i = 0; i < n; i++)
-		{
-			c = a + b;
+  if (n <= 0) {
+    return 'Invalid input. Please enter a positive integer.';
+  }
+  
+  if (n === 1 || n === 2) {
+    return 1;
+  }
+  
+  let prev = 1;
+  let curr = 1;
+  
+  for (let i = 3; i <= n; i++) {
+    let next = prev + curr;
 
-			console.log(c);
-			a = b;
-			b = c;
-		}
-	
+	console.log(curr);
+    prev = curr;
+    curr = next;
+  }
 }
+
 
 module.exports = fibonacci;
